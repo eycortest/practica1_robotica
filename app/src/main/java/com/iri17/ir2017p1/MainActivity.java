@@ -25,7 +25,6 @@ public class MainActivity extends Activity {
     private SeekBar s4;
     private SeekBar s5;
 
-
     private TextView ts1;
     private TextView ts2;
     private TextView ts3;
