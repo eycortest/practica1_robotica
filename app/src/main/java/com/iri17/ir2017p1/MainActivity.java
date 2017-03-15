@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
@@ -71,31 +70,43 @@ public class MainActivity extends Activity {
             }
         });
 
-        ts1 = (TextView) findViewById(R.id.textView7);
+        ts1 = (TextView) findViewById(R.id.txtBarra1);
         ts1.setText("25");
-        s1= (SeekBar) findViewById(R.id.seekBar);
+        s1= (SeekBar) findViewById(R.id.sb1);
         s1.setProgress(25);
         s1.setMax(100);
 
-        ts2 = (TextView) findViewById(R.id.textView9);
+        ts2 = (TextView) findViewById(R.id.txtBarra2);
         ts2.setText("25");
-        s2= (SeekBar) findViewById(R.id.seekBar2);
+        s2= (SeekBar) findViewById(R.id.sb2);
         s2.setProgress(25);
         s2.setMax(100);
 
-        ts3 = (TextView) findViewById(R.id.textView10);
+        ts3 = (TextView) findViewById(R.id.txtBarra3);
         ts3.setText("25");
-        s3= (SeekBar) findViewById(R.id.seekBar3);
+        s3= (SeekBar) findViewById(R.id.sb3);
         s3.setProgress(25);
         s3.setMax(100);
+
+        ts4 = (TextView) findViewById(R.id.txtBarra4);
+        ts4.setText("25");
+        s4 = (SeekBar) findViewById(R.id.sb4);
+        s4.setProgress(25);
+        s4.setMax(100);
+
+        ts5 = (TextView) findViewById(R.id.txtBarra5);
+        ts5.setText("25");
+        s5 = (SeekBar) findViewById(R.id.sb5);
+        s5.setProgress(25);
+        s5.setMax(100);
 
         tvd= (TextView) findViewById(R.id.textView8);
         tvdc= (TextView) findViewById(R.id.textView);
 
-        te= (TextView) findViewById(R.id.textView3);
-        td= (TextView) findViewById(R.id.textView4);
-        ed= (EditText) findViewById(R.id.editText);
-        tb= (ToggleButton) findViewById(R.id.toggleButton);
+        te= (TextView) findViewById(R.id.txtConectando);
+        td= (TextView) findViewById(R.id.txtConectandoIP);
+        ed= (EditText) findViewById(R.id.txtDireccionIP);
+        tb= (ToggleButton) findViewById(R.id.tbtnConectar);
         td.setText("IP: ");
         te.setText("Desconectado");
 
@@ -174,6 +185,42 @@ public class MainActivity extends Activity {
             }
         });
 
+        s4.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                ts4.setText("" + progress);
+                vs4 = progress;
+                mensaje();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        s5.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                ts5.setText("" + progress);
+                vs5 = progress;
+                mensaje();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
 
 
