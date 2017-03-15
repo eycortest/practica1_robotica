@@ -15,25 +15,6 @@
     tools:context="com.iri17.ir2017p1.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/sb5"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="39dp"
-        android:layout_toEndOf="@+id/lblTitulo"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView8"
-        android:layout_below="@+id/textView8"
-        android:layout_marginTop="18dp"
-        android:text="TextView" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -68,7 +49,8 @@
             android:ems="10"
             android:fontFamily="cursive"
             android:hint="Direccion IP: 192.168.1.100"
-            android:inputType="phone"
+            android:inputType="number"
+            android:digits="0123456789."
             android:padding="5dp"
             android:textColor="@android:color/background_dark" />
 
@@ -133,7 +115,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignTop="@+id/sb1"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@android:color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -157,7 +140,8 @@
                 android:layout_alignBottom="@+id/sb2"
                 android:layout_alignParentEnd="true"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@android:color/black" />
 
         </LinearLayout>
 
@@ -182,7 +166,8 @@
                 android:layout_above="@+id/txtBarra5"
                 android:layout_alignParentEnd="true"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@android:color/black" />
 
         </LinearLayout>
 
@@ -207,12 +192,13 @@
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/sb4"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@android:color/black" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <SeekBar
@@ -231,8 +217,35 @@
                 android:layout_above="@+id/txtBarra4"
                 android:layout_alignParentEnd="true"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@android:color/black" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtByte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sb5"
+                android:layout_toEndOf="@+id/lblTitulo"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/txtHexa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/txtByte"
+                android:layout_below="@+id/txtByte"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textColor="@android:color/holo_green_dark" />
         </LinearLayout>
 
     </LinearLayout>

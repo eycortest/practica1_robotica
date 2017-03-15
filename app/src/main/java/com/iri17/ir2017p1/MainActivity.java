@@ -100,8 +100,8 @@ public class MainActivity extends Activity {
         s5.setProgress(25);
         s5.setMax(100);
 
-        tvd= (TextView) findViewById(R.id.textView8);
-        tvdc= (TextView) findViewById(R.id.textView);
+        tvd= (TextView) findViewById(R.id.txtByte);
+        tvdc= (TextView) findViewById(R.id.txtHexa);
 
         te= (TextView) findViewById(R.id.txtConectando);
         td= (TextView) findViewById(R.id.txtConectandoIP);
@@ -113,7 +113,6 @@ public class MainActivity extends Activity {
         tb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
                 if (isChecked==true){
                     te.setText("Conectando a");
                     td.setText("IP: "+ ed.getText());
@@ -125,7 +124,6 @@ public class MainActivity extends Activity {
                 }
             }
         });
-
 
         s1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -145,7 +143,6 @@ public class MainActivity extends Activity {
 
             }
         });
-
         s2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -164,8 +161,6 @@ public class MainActivity extends Activity {
 
             }
         });
-
-
         s3.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -184,7 +179,6 @@ public class MainActivity extends Activity {
 
             }
         });
-
         s4.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -221,13 +215,6 @@ public class MainActivity extends Activity {
 
             }
         });
-
-
-
-
-
-
-
 
     }
 
