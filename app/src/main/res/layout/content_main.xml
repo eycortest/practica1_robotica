@@ -20,7 +20,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true">
+
 
         <TextView
             android:id="@+id/lblTitulo"
@@ -28,8 +30,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="false"
             android:layout_alignParentEnd="false"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/txtDireccionIP"
+            android:layout_alignLeft="@+id/txtDireccionIP"
             android:layout_marginTop="0dp"
             android:text="Practica 1"
             android:textColor="@android:color/background_light"
@@ -42,6 +47,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
             android:layout_below="@+id/lblTitulo"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="30dp"
@@ -65,6 +72,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_alignEnd="@+id/lblTitulo"
+                android:layout_alignRight="@+id/lblTitulo"
 
                 android:layout_below="@+id/txtConectando"
 
@@ -99,6 +107,27 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+
+            <SeekBar
+                android:id="@+id/sb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentLeft="true"
+                android:minHeight="6dip"
+                android:maxHeight="6dip"
+                android:layout_below="@+id/tbtnConectar"
+                android:layout_toStartOf="@+id/txtBarra1"
+                android:layout_toLeftOf="@+id/txtBarra1"
+                android:secondaryProgress="40"
+                android:thumb="@drawable/thumb_seekbar"
+                android:progressDrawable="@drawable/progress_seekbar"
+                android:splitTrack="false"
+                android:layout_weight="1" />
+
+            <!-- Original
             <SeekBar
                 android:id="@+id/sb1"
                 android:layout_width="wrap_content"
@@ -107,12 +136,14 @@
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/tbtnConectar"
                 android:layout_weight="1" />
-
+-
+-->
             <TextView
                 android:id="@+id/txtBarra1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_alignTop="@+id/sb1"
                 android:layout_weight="1"
                 android:text="TextView"
@@ -124,14 +155,38 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <SeekBar
+         <!--   <SeekBar
                 android:id="@+id/sb2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/sb1"
+                android:layout_weight="1" /> -->
+
+            <SeekBar
+                android:id="@+id/sb2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:minHeight="6dip"
+                android:maxHeight="6dip"
+                android:layout_below="@+id/sb1"
+                android:layout_toStartOf="@+id/txtBarra2"
+                android:layout_toLeftOf="@+id/txtBarra2"
+                android:secondaryProgress="40"
+                android:thumb="@drawable/thumb_seekbar"
+                android:progressDrawable="@drawable/progress_seekbar"
+                android:splitTrack="false"
                 android:layout_weight="1" />
+
+
+
+
+
 
             <TextView
                 android:id="@+id/txtBarra2"
@@ -139,6 +194,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/sb2"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_weight="1"
                 android:text="TextView"
                 android:textColor="@android:color/black" />
@@ -150,14 +206,35 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <SeekBar
+         <!--   <SeekBar
                 android:id="@+id/sb3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/sb2"
+                android:layout_weight="1" /> -->
+
+
+            <SeekBar
+                android:id="@+id/sb3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:minHeight="6dip"
+                android:maxHeight="6dip"
+                android:layout_below="@+id/sb2"
+                android:layout_toStartOf="@+id/txtBarra3"
+                android:layout_toLeftOf="@+id/txtBarra3"
+                android:secondaryProgress="40"
+                android:thumb="@drawable/thumb_seekbar"
+                android:progressDrawable="@drawable/progress_seekbar"
+                android:splitTrack="false"
                 android:layout_weight="1" />
+
 
             <TextView
                 android:id="@+id/txtBarra3"
@@ -165,6 +242,7 @@
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/txtBarra5"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_weight="1"
                 android:text="TextView"
                 android:textColor="@android:color/black" />
@@ -176,13 +254,32 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <SeekBar
+            <!--<SeekBar
                 android:id="@+id/sb4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/sb3"
+                android:layout_weight="1" /> -->
+
+            <SeekBar
+                android:id="@+id/sb4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:minHeight="6dip"
+                android:maxHeight="6dip"
+                android:layout_below="@+id/sb3"
+                android:layout_toStartOf="@+id/txtBarra4"
+                android:layout_toLeftOf="@+id/txtBarra4"
+                android:secondaryProgress="40"
+                android:thumb="@drawable/thumb_seekbar"
+                android:progressDrawable="@drawable/progress_seekbar"
+                android:splitTrack="false"
                 android:layout_weight="1" />
 
             <TextView
@@ -201,13 +298,33 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <SeekBar
+           <!-- <SeekBar
                 android:id="@+id/sb5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/sb4"
+                android:layout_weight="1" /> -->
+
+
+            <SeekBar
+                android:id="@+id/sb5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:minHeight="6dip"
+                android:maxHeight="6dip"
+                android:layout_below="@+id/sb4"
+                android:layout_toStartOf="@+id/txtBarra5"
+                android:layout_toLeftOf="@+id/txtBarra5"
+                android:secondaryProgress="40"
+                android:thumb="@drawable/thumb_seekbar"
+                android:progressDrawable="@drawable/progress_seekbar"
+                android:splitTrack="false"
                 android:layout_weight="1" />
 
             <TextView
@@ -218,7 +335,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_weight="1"
                 android:text="TextView"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:layout_alignParentRight="true" />
 
         </LinearLayout>
 

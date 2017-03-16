@@ -1,6 +1,7 @@
 package com.iri17.ir2017p1;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -46,6 +47,10 @@ public class MainActivity extends Activity {
     private EditText ed;
     private ToggleButton tb;
 
+
+    public String SERVERRIP="192.168.1.100";
+    public TCPClient  STCPClient;
+    public String estado="En espera";
 
 
     @Override
@@ -99,6 +104,9 @@ public class MainActivity extends Activity {
         s5 = (SeekBar) findViewById(R.id.sb5);
         s5.setProgress(25);
         s5.setMax(100);
+
+
+
 
         tvd= (TextView) findViewById(R.id.txtByte);
         tvdc= (TextView) findViewById(R.id.txtHexa);
