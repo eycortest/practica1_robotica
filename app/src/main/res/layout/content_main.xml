@@ -104,8 +104,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentStart="true"
+                android:layout_alignParentStart="false"
+                android:minHeight="6dip"
+                android:maxHeight="6dip"
                 android:layout_below="@+id/tbtnConectar"
+                android:layout_toStartOf="@+id/txtBarra1"
+                android:layout_toLeftOf="@+id/txtBarra1"
+                android:secondaryProgress="40"
+                android:thumb="@drawable/thumb_seekbar"
+                android:progressDrawable="@drawable/progress_seekbar"
+                android:splitTrack="false"
                 android:layout_weight="1" />
 
             <TextView
@@ -129,8 +137,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentStart="true"
+                android:layout_alignParentStart="false"
+                android:minHeight="6dip"
+                android:maxHeight="6dip"
                 android:layout_below="@+id/sb1"
+                android:layout_toStartOf="@+id/txtBarra2"
+                android:layout_toLeftOf="@+id/txtBarra2"
+                android:secondaryProgress="40"
+                android:thumb="@drawable/thumb_seekbar"
+                android:progressDrawable="@drawable/progress_seekbar"
+                android:splitTrack="false"
                 android:layout_weight="1" />
 
             <TextView
@@ -150,13 +166,26 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+
+
+
+
+
             <SeekBar
                 android:id="@+id/sb3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentStart="true"
+                android:layout_alignParentStart="false"
+                android:minHeight="6dip"
+                android:maxHeight="6dip"
                 android:layout_below="@+id/sb2"
+                android:layout_toStartOf="@+id/txtBarra3"
+                android:layout_toLeftOf="@+id/txtBarra3"
+                android:secondaryProgress="40"
+                android:thumb="@drawable/thumb_seekbar"
+                android:progressDrawable="@drawable/progress_seekbar"
+                android:splitTrack="false"
                 android:layout_weight="1" />
 
             <TextView
@@ -181,9 +210,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentStart="true"
+                android:layout_alignParentStart="false"
+                android:minHeight="6dip"
+                android:maxHeight="6dip"
                 android:layout_below="@+id/sb3"
+                android:layout_toStartOf="@+id/txtBarra4"
+                android:layout_toLeftOf="@+id/txtBarra4"
+                android:secondaryProgress="40"
+                android:thumb="@drawable/thumb_seekbar"
+                android:progressDrawable="@drawable/progress_seekbar"
+                android:splitTrack="false"
                 android:layout_weight="1" />
+
 
             <TextView
                 android:id="@+id/txtBarra4"
@@ -206,8 +244,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentStart="true"
+                android:layout_alignParentStart="false"
+                android:minHeight="6dip"
+                android:maxHeight="6dip"
                 android:layout_below="@+id/sb4"
+                android:layout_toStartOf="@+id/txtBarra5"
+                android:layout_toLeftOf="@+id/txtBarra5"
+                android:secondaryProgress="40"
+                android:thumb="@drawable/thumb_seekbar"
+                android:progressDrawable="@drawable/progress_seekbar"
+                android:splitTrack="false"
                 android:layout_weight="1" />
 
             <TextView
