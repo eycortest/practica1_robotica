@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/content_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fondo"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:background="@drawable/fondo"
+        tools:context="com.iri17.ir2017p1.MainActivity"
+        tools:showIn="@layout/activity_main">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="28dp"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/lblTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Practica 1"
+                android:textColor="@android:color/background_light"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/txtDireccionIP"
+                style="@style/Base.Theme.AppCompat.Light.DialogWhenLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/lblTitulo"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="30dp"
+                android:background="@android:color/background_light"
+                android:digits="0123456789."
+                android:ems="10"
+                android:fontFamily="cursive"
+                android:hint="Direccion IP: 192.168.1.100"
+                android:inputType="number"
+                android:padding="5dp"
+                android:textColor="@android:color/background_dark" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="0.86"
+                android:orientation="horizontal"></LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="71dp"
+                android:layout_marginTop="10dp">
+
+                <ToggleButton
+                    android:id="@+id/tbtnConectar"
+                    style="@style/Toggle"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignEnd="@+id/lblTitulo"
+
+                    android:layout_below="@+id/txtConectando"
+
+                    android:layout_weight="1"
+                    android:width="100dp"
+                    android:height="100dp"
+                    android:maxWidth="228dip"
+                    android:text="ToggleButton"
+                    android:textOff="OFF"
+                    android:textOn="ON" />
+
+                <TextView
+                    android:id="@+id/txtConectando"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtDireccionIP"
+                    android:layout_marginLeft="120dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txtConectandoIP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtConectando"
+                    android:layout_marginLeft="120dp"
+                    android:layout_marginTop="30dp"
+                    android:text="TextView" />
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <SeekBar
+                    android:id="@+id/sb1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="false"
+                    android:layout_below="@+id/tbtnConectar"
+                    android:layout_toLeftOf="@+id/txtBarra1"
+                    android:layout_toStartOf="@+id/txtBarra1"
+                    android:layout_weight="1.69"
+                    android:maxHeight="6dip"
+                    android:minHeight="6dip"
+                    android:progressDrawable="@drawable/progress_seekbar"
+                    android:secondaryProgress="40"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/thumb_seekbar" />
+
+                <TextView
+                    android:id="@+id/txtBarra1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@+id/sb1"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <SeekBar
+                    android:id="@+id/sb2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="false"
+                    android:layout_below="@+id/sb1"
+                    android:layout_toLeftOf="@+id/txtBarra2"
+                    android:layout_toStartOf="@+id/txtBarra2"
+                    android:layout_weight="1.69"
+                    android:maxHeight="6dip"
+                    android:minHeight="6dip"
+                    android:progressDrawable="@drawable/progress_seekbar"
+                    android:secondaryProgress="40"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/thumb_seekbar" />
+
+                <TextView
+                    android:id="@+id/txtBarra2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/sb2"
+                    android:layout_alignParentEnd="true"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textColor="@android:color/black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <SeekBar
+                    android:id="@+id/sb3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="false"
+                    android:layout_below="@+id/sb2"
+                    android:layout_toLeftOf="@+id/txtBarra3"
+                    android:layout_toStartOf="@+id/txtBarra3"
+                    android:layout_weight="1.69"
+                    android:maxHeight="6dip"
+                    android:minHeight="6dip"
+                    android:progressDrawable="@drawable/progress_seekbar"
+                    android:secondaryProgress="40"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/thumb_seekbar" />
+
+                <TextView
+                    android:id="@+id/txtBarra3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/txtBarra5"
+                    android:layout_alignParentEnd="true"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textColor="@android:color/black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <SeekBar
+                    android:id="@+id/sb4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="false"
+                    android:layout_below="@+id/sb3"
+                    android:layout_toLeftOf="@+id/txtBarra4"
+                    android:layout_toStartOf="@+id/txtBarra4"
+                    android:layout_weight="1.69"
+                    android:maxHeight="6dip"
+                    android:minHeight="6dip"
+                    android:progressDrawable="@drawable/progress_seekbar"
+                    android:secondaryProgress="40"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/thumb_seekbar" />
+
+
+                <TextView
+                    android:id="@+id/txtBarra4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/sb4"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <SeekBar
+                    android:id="@+id/sb5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="false"
+                    android:layout_below="@+id/sb4"
+                    android:layout_toLeftOf="@+id/txtBarra5"
+                    android:layout_toStartOf="@+id/txtBarra5"
+                    android:layout_weight="1.69"
+                    android:maxHeight="6dip"
+                    android:minHeight="6dip"
+                    android:progressDrawable="@drawable/progress_seekbar"
+                    android:secondaryProgress="40"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/thumb_seekbar" />
+
+                <TextView
+                    android:id="@+id/txtBarra5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/txtBarra4"
+                    android:layout_alignParentEnd="true"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textColor="@android:color/black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtByte"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sb5"
+                    android:layout_toEndOf="@+id/lblTitulo"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/txtHexa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/txtByte"
+                    android:layout_below="@+id/txtByte"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textColor="@android:color/holo_green_dark" />
+
+                <HorizontalScrollView
+                    android:layout_width="267dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.25">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical" />
+                </HorizontalScrollView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>
