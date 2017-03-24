@@ -2,6 +2,7 @@ package com.iri17.ir2017p1;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.AsyncTask;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.Toolbar;
@@ -47,6 +48,8 @@ public class MainActivity extends Activity {
     private ToggleButton tb;
 
 
+    public String SERVERIP ="192.168.1.100";
+    public TCPClient mTcpClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,6 +117,8 @@ public class MainActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked==true){
+                    new connecTask().execute("");
+                    SERVERIP = ed.getText().toString();
                     te.setText("Conectando a");
                     td.setText("IP: "+ ed.getText());
                 }
@@ -235,12 +240,10 @@ public class MainActivity extends Activity {
 
         tvd.setText("Datos: "+s1);
         tvdc.setText(s);
-/*
         if (mTcpClient != null) {
-            mTcpClient.sendMessage(s);
-            IP.setText(mTcpClient.conection());
+            mTcpClient.sendMessage("sffdf");
+            te.setText(mTcpClient.conection());
         }
-        */
     }
 
 
@@ -266,5 +269,27 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private class connecTask extends AsyncTask<String,String,TCPClient>{
+
+
+        @Override
+        protected TCPClient doInBackground(String... params) {
+
+            mTcpClient = new TCPClient(new TCPClient.OnMessageReceived() {
+                @Override
+                public void messageReceived(String message) {
+                    publishProgress(message);
+                }
+            });
+
+            mTcpClient.IP(SERVERIP);
+            mTcpClient.run();
+
+
+
+            return null;
+        }
     }
 }
