@@ -3,9 +3,11 @@ package com.iri17.ir2017p1;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.AsyncTask;
+import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,6 +20,7 @@ import android.widget.ToggleButton;
 import java.io.UnsupportedEncodingException;
 
 public class MainActivity extends Activity {
+
 
     private SeekBar s1;
     private SeekBar s2;
@@ -48,8 +51,8 @@ public class MainActivity extends Activity {
     private ToggleButton tb;
 
 
-    public String SERVERIP ="192.168.1.100";
-    public TCPClient mTcpClient;
+    public static String SERVERIP ="192.168.1.100";
+    public static TCPClient mTcpClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,16 +119,18 @@ public class MainActivity extends Activity {
         tb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked==true){
-                    new connecTask().execute("");
-                    SERVERIP = ed.getText().toString();
-                    te.setText("Conectando a");
-                    td.setText("IP: "+ ed.getText());
-                }
-                else {
-
-                    te.setText("Desconectado");
-                    td.setText("IP: ");
+                try {
+                    if (isChecked == true) {
+                        SERVERIP = ed.getText().toString();
+                        new connecTask().execute("");
+                        te.setText("Conectando a");
+                        td.setText("IP: " + ed.getText());
+                    } else {
+                        mTcpClient.stopClient();
+                        te.setText("Desconectado");
+                        td.setText("IP: ");
+                    }
+                }catch (Throwable ex){
                 }
             }
         });
@@ -241,7 +246,7 @@ public class MainActivity extends Activity {
         tvd.setText("Datos: "+s1);
         tvdc.setText(s);
         if (mTcpClient != null) {
-            mTcpClient.sendMessage("sffdf");
+            mTcpClient.sendMessage(s);
             te.setText(mTcpClient.conection());
         }
     }
@@ -276,7 +281,6 @@ public class MainActivity extends Activity {
 
         @Override
         protected TCPClient doInBackground(String... params) {
-
             mTcpClient = new TCPClient(new TCPClient.OnMessageReceived() {
                 @Override
                 public void messageReceived(String message) {

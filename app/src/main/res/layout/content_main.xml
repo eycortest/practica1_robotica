@@ -46,13 +46,15 @@
             android:layout_marginLeft="0dp"
             android:layout_marginRight="30dp"
             android:background="@android:color/background_light"
+            android:digits="0123456789."
             android:ems="10"
             android:fontFamily="cursive"
             android:hint="Direccion IP: 192.168.1.100"
             android:inputType="number"
-            android:digits="0123456789."
             android:padding="5dp"
-            android:textColor="@android:color/background_dark" />
+            android:text="192.168.1.150"
+            android:textColor="@android:color/background_dark"
+            tools:text="192.168.1.150" />
 
         <FrameLayout
             android:layout_width="match_parent"
