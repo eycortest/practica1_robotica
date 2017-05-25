@@ -1,6 +1,10 @@
 package com.iri17.ir2017p1;
 
 import android.app.Activity;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.AsyncTask;
 import android.os.StrictMode;
@@ -18,8 +22,9 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements SensorEventListener {
 
 
     private SeekBar s1;
@@ -295,5 +300,55 @@ public class MainActivity extends Activity {
 
             return null;
         }
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        SensorManager sm = (SensorManager) getSystemService(SENSOR_SERVICE);
+        List<Sensor> sensors = sm.getSensorList(Sensor.TYPE_ACCELEROMETER);
+        if(sensors.size() > 0){
+            sm.registerListener(this, sensors.get(0), SensorManager.SENSOR_DELAY_GAME);
+        }
+    }
+
+    protected void onStop(){
+        SensorManager sm = (SensorManager) getSystemService(SENSOR_SERVICE);
+        sm.unregisterListener(this);
+        super.onStop();
+    }
+    float prevX, prevY, prevZ;
+    public void onSensorChanged(SensorEvent event){
+        synchronized (this){
+            float curX = event.values[0];
+            float curY = event.values[1];
+            float curZ = event.values[2];
+
+            float ea = (float)0.5;
+            if(prevX==0 && prevY == 0 && prevZ == 0){
+                prevX = curX;
+                prevY = curY;
+                prevZ = curZ;
+            }
+            if(prevX>curX+ea || prevX<curX-ea || prevZ>curY+ea || prevZ<curY-ea){
+                int x = (int) curX*-5+50;
+                int y = (int) curY;
+                int z = (int) curZ*5+50;
+                vs1 = (char)x;
+                vs2 = (char)z;
+                mensaje();
+                s1.setProgress(x);
+                s2.setProgress(z);
+
+                prevX = curX;
+                prevY = curY;
+                prevZ = curZ;
+            }
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
     }
 }
